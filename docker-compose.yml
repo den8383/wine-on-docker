@@ -1,0 +1,14 @@
+version: "3"
+services:
+  ubuntu:
+    container_name: line
+    build: 
+      context: ./
+      dockerfile: ./docker/ubuntu/Dockerfile
+    network_mode: "host"
+    environment:
+      - DISPLAY=${DISPLAY}
+        #    volumes:
+        #      - $HOME/.Xauthority:/root/.Xauthority
+        #      - ./:/home/usr/app
+    command: /sbin/init
